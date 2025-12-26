@@ -1,0 +1,172 @@
+<!-- Form Card -->
+<div class="container">
+  <div class="top-success" *ngIf="showPopup">
+    ✅ Employee Registered Successfully!
+  </div>
+
+  <form #data="ngForm" (ngSubmit)="register(data)" class="form-card">
+
+    <h2>👤 Employee Registration</h2>
+    <p class="subtitle">Add new employee details</p>
+
+    <!-- NAME -->
+    <div class="form-group">
+      <label>👤 Full Name</label>
+      <input
+        type="text"
+        name="name"
+        ngModel
+        #name="ngModel"
+        required
+        placeholder="Enter Full Name"
+        (ngModelChange)="serverErrors.name = null">
+
+      <!-- Frontend error -->
+      <span class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
+        Name can not be empty
+      </span>
+
+      <!-- Backend error -->
+      <span class="error" *ngIf="serverErrors?.name">
+        {{ serverErrors.name }}
+      </span>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group">
+      <label>📧 Email</label>
+      <input
+        type="email"
+        name="email"
+        ngModel
+        #email="ngModel"
+        required
+        placeholder="Enter Email"
+        (ngModelChange)="serverErrors.email = null">
+
+      <!-- Frontend error -->
+      <span class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+        Enter a valid email
+      </span>
+
+      <!-- Backend error -->
+      <span class="error" *ngIf="serverErrors?.email">
+        {{ serverErrors.email }}
+      </span>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="form-group">
+      <label>🔒 Password</label>
+      <input
+        type="password"
+        name="password"
+        ngModel
+        #password="ngModel"
+        required
+        placeholder="Enter Password"
+        (ngModelChange)="serverErrors.password = null">
+
+      <!-- Frontend error -->
+      <span class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+        Password can not be empty
+      </span>
+
+      <!-- Backend error -->
+      <span class="error" *ngIf="serverErrors?.password">
+        {{ serverErrors.password }}
+      </span>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="form-group">
+      <label>📍 Address</label>
+      <select
+        name="address"
+        ngModel
+        #address="ngModel"
+        required
+        (ngModelChange)="serverErrors.address = null">
+        <option value="">-- Select Address --</option>
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Satara">Satara</option>
+      </select>
+
+      <span class="error" *ngIf="address.invalid && (address.dirty || address.touched)">
+        Address can not be empty
+      </span>
+
+      <span class="error" *ngIf="serverErrors?.address">
+        {{ serverErrors.address }}
+      </span>
+    </div>
+
+    <!-- DEPARTMENT -->
+    <div class="form-group">
+      <label>🏢 Department</label>
+      <select
+        name="dep"
+        ngModel
+        #dep="ngModel"
+        required
+        (ngModelChange)="serverErrors.dep = null">
+        <option value="">-- Select Department --</option>
+        <option value="IT">IT</option>
+        <option value="Sales">Sales</option>
+        <option value="HR">HR</option>
+      </select>
+
+      <span class="error" *ngIf="dep.invalid && (dep.dirty || dep.touched)">
+        Department can not be empty
+      </span>
+
+      <span class="error" *ngIf="serverErrors?.dep">
+        {{ serverErrors.dep }}
+      </span>
+    </div>
+
+    <!-- SALARY -->
+    <div class="form-group">
+      <label>💰 Salary</label>
+      <input
+        type="number"
+        name="salary"
+        ngModel
+        #salary="ngModel"
+        required
+        placeholder="Enter Salary"
+        (ngModelChange)="serverErrors.salary = null">
+
+      <span class="error" *ngIf="salary.invalid && (salary.dirty || salary.touched)">
+        Salary can not be empty
+      </span>
+
+      <span class="error" *ngIf="serverErrors?.salary">
+        {{ serverErrors.salary }}
+      </span>
+    </div>
+
+    <!-- GENDER -->
+    <div class="form-group">
+      <label>⚧ Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" value="Male" ngModel required (change)="serverErrors.gender = null"> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Female" ngModel required (change)="serverErrors.gender = null"> Female
+        </label>
+      </div>
+      <span class="error" *ngIf="serverErrors?.gender">
+        {{ serverErrors.gender }}
+      </span>
+    </div>
+
+    <!-- SUBMIT -->
+    <button type="submit" class="btn" [disabled]="data.invalid">
+      ✅ Register Employee
+    </button>
+
+  </form>
+</div>

@@ -1,0 +1,85 @@
+/* ROOT */
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #007bff, #004aad);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* IMPORTANT: vh काढून टाकलं */
+  padding: 120px 20px 80px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  opacity: 0.95;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 25px;
+  margin: 0 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: white;
+  color: #007bff;
+}
+
+.primary:hover {
+  transform: scale(1.05);
+}
+
+.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary:hover {
+  background: white;
+  color: #007bff;
+}
+
+/* FEATURES SECTION */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 60px 40px;
+  background: #f8f9fa;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}

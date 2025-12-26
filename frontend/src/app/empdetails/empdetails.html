@@ -1,0 +1,40 @@
+
+
+
+
+<div class="emp-wrapper">
+  <h2>👨‍💼 Employee Details</h2>
+
+  <table class="emp-table">
+    <thead>
+      <tr>
+        <th>🆔 ID</th>
+        <th>👤 Name</th>
+        <th>📧 Email</th>
+        <th>💰 Salary</th>
+        <th>🏠 Address</th>
+        <th>🚻 Gender</th>
+        <th>🏢 Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+       
+        <td>₹ {{ emp.salary }}</td>
+        <td>{{ emp.address }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.dep }}</td>
+       <td class="action-cell">
+  <button class="btn btn-edit" (click)="edit(emp.id)">✏️ Edit</button>
+  <button class="btn btn-delete" (click)="delete(emp.id)">🗑️ Delete</button>
+</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

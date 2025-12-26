@@ -1,0 +1,32 @@
+<div class="edit-wrapper">
+  <h2>✏️ Edit Employee</h2>
+
+  <form (ngSubmit)="updateEmployee()" #empForm="ngForm">
+
+    <label>Name</label>
+    <input type="text" [(ngModel)]="employee.name" name="name" required />
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="employee.email" name="email" required />
+
+    <label>Salary</label>
+    <input type="number" [(ngModel)]="employee.salary" name="salary" />
+
+    <label>Address</label>
+    <input type="text" [(ngModel)]="employee.address" name="address" />
+
+    <label>Gender</label>
+    <select [(ngModel)]="employee.gender" name="gender">
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+
+    <label>Department</label>
+    <input type="text" [(ngModel)]="employee.dep" name="dep" />
+
+    <button type="submit" [disabled]="empForm.invalid">
+      💾 Update Employee
+    </button>
+  </form>
+</div>

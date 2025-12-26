@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="nav-brand">💼 EMS - Employee Management System</div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/home">🏠 Home</a></li>
+
+    <!-- login नाही -->
+    <li *ngIf="!isLoggedIn">
+      <a routerLink="/login">🔑 Login</a>
+    </li>
+
+    <!-- login आहे -->
+    <li *ngIf="isLoggedIn">
+      <a routerLink="/employees">👥 Employees</a>
+    </li>
+
+    <li *ngIf="isLoggedIn">
+      <a routerLink="/register">📝 Register</a>
+    </li>
+
+    <li *ngIf="isLoggedIn">
+      <button (click)="logout()">🚪 Logout</button>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

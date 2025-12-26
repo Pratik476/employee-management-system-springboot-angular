@@ -1,0 +1,47 @@
+.edit-wrapper {
+  max-width: 450px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.edit-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+input, select {
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
